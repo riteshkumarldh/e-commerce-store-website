@@ -7,3 +7,19 @@
     all: unset;
   }
 }
+
+@media (min-width: 1024px) {
+  .grid-settings {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .span-row-col {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .span-row {
+    grid-row: span 2;
+  }
+}

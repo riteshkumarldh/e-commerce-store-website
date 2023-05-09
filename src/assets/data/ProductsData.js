@@ -59,7 +59,7 @@ import MatLamp2 from "../img/products/otherProducts/mat2.webp";
 import Comfy1 from "../img/products/otherProducts/comfy1.webp";
 import Comfy2 from "../img/products/otherProducts/comfy2.webp";
 
-export const items = [
+export const products = [
   {
     id: 1,
     category: "chair",

@@ -8,7 +8,7 @@ import { menu } from "../assets/data/menuData";
 export default function Navbar({ mobileMenu, setMobileMenu }) {
   return (
     <nav
-      className={`fixed top-0 ${
+      className={`fixed z-50 top-0 ${
         mobileMenu ? "right-0" : "right-[-384px]"
       } transition-all duration-300 max-w-sm w-full h-screen bg-slate-100 unset`}
     >
