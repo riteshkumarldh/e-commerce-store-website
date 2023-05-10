@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export default function FilteredProducts({ category }) {
   const [data, setData] = useState([]);
 
+  // filtering categories
   useEffect(() => {
     if (category === "all") {
       setData(products);

@@ -8,7 +8,11 @@ import { RiMenu3Fill } from "react-icons/ri";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 
+// using context
+import { useCart } from "../context/cartContext";
+
 export default function Header() {
+  const { setCartOpen } = useCart();
   const [mobileMenu, setMobileMenu] = useState(false);
   return (
     <header className="shadow-md">
@@ -16,7 +20,11 @@ export default function Header() {
         <Logo />
         <div className="flex items-center gap-8 md:gap-10">
           <Navbar mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-          <RiShoppingCartFill size={28} className="cursor-pointer" />
+          <RiShoppingCartFill
+            size={28}
+            className="cursor-pointer"
+            onClick={() => setCartOpen((prev) => !prev)}
+          />
           <RiMenu3Fill
             size={28}
             className="cursor-pointer md:hidden"
