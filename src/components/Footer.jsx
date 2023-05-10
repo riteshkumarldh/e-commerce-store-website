@@ -9,7 +9,7 @@ const bottomLinks = [
   {
     id: 2,
     name: "Products",
-    path: "/products",
+    path: "/products/all",
   },
   {
     id: 3,

@@ -2,6 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // pages
 import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Furnitures from "./pages/categoryPages/Furnitures";
+import Electronics from "./pages/categoryPages/Electronics";
+import Lamps from "./pages/categoryPages/Lamps";
+import Kitchen from "./pages/categoryPages/Kitchen";
+import Chairs from "./pages/categoryPages/Chairs";
+import SkinCare from "./pages/categoryPages/SkinCare";
+import NotFound from "./pages/NotFound";
 
 // components
 import Header from "./components/Header";
@@ -14,6 +22,14 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products/all" element={<Products />} />
+        <Route path="/products/furnitures" element={<Furnitures />} />
+        <Route path="/products/electronics" element={<Electronics />} />
+        <Route path="/products/lamp" element={<Lamps />} />
+        <Route path="/products/kitchen" element={<Kitchen />} />
+        <Route path="/products/chairs" element={<Chairs />} />
+        <Route path="/products/skincare" element={<SkinCare />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Newsletter />
       <Footer />

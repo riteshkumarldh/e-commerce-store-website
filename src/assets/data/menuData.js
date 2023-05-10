@@ -1,17 +1,22 @@
 export const menu = [
   {
     id: 1,
-    path: "/categories",
-    name: "Categories",
+    path: "/products/all",
+    name: "Products",
   },
   {
     id: 2,
-    path: "/lamp",
-    name: "lamp",
+    path: "/products/lamp",
+    name: "lamps",
   },
   {
     id: 3,
-    path: "/furniture",
-    name: "Furniture",
+    path: "/products/furnitures",
+    name: "Furnitures",
+  },
+  {
+    id: 4,
+    path: "/products/chairs",
+    name: "Chairs",
   },
 ];
