@@ -1,6 +1,6 @@
 export default function Newsletter() {
   return (
-    <section className=" bg-zinc-800 py-20 flex items-center justify-center">
+    <section className=" bg-neutral-900 py-20 flex items-center justify-center">
       <div className="text-center container mx-auto px-4">
         <h2 className="font-bold text-zinc-100 text-3xl mb-5">Newsletter</h2>
         <form className="flex items-center gap-2 w-full md:w-1/3 mx-auto">

@@ -10,7 +10,7 @@ export default function ProudProducts() {
           <Link
             to={`product/${product.id}`}
             key={product.id}
-            className="border-2 border-gray-300 flex flex-col items-center justify-center hover:border-gray-800 transition-all duration-300"
+            className="border-[4px] border-gray-300 flex flex-col items-center justify-center hover:border-gray-800 transition-all duration-300"
           >
             <figure className="aspect-square">
               <img

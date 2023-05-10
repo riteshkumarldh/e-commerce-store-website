@@ -3,43 +3,37 @@ import { Link } from "react-router-dom";
 const bottomLinks = [
   {
     id: 1,
-    name: "About",
+    name: "Home",
     path: "/",
   },
   {
     id: 2,
-    name: "Store Locator",
-    path: "/",
+    name: "Products",
+    path: "/products",
   },
   {
     id: 3,
-    name: "FAQs",
-    path: "/",
+    name: "About",
+    path: "/about",
   },
   {
     id: 4,
-    name: "News",
-    path: "/",
-  },
-  {
-    id: 5,
-    name: "Careers",
-    path: "/",
-  },
-  {
-    id: 6,
-    name: "Contact Us",
-    path: "/",
+    name: "Contact",
+    path: "/contact",
   },
 ];
 
 export default function Footer() {
   return (
-    <section className="bg-black py-10 text-white">
+    <section className="bg-neutral-950 py-10 text-white">
       <div className="container mx-auto px-5 flex flex-wrap gap-5 items-center justify-center">
         {bottomLinks.map((link) => {
           return (
-            <Link to={link.path} key={link.id}>
+            <Link
+              to={link.path}
+              key={link.id}
+              className="text-gray-400 transition-all hover:text-white"
+            >
               {link.name}
             </Link>
           );
