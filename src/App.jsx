@@ -16,6 +16,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Newsletter from "./components/Newsletter";
 import CartSidebar from "./components/CartSidebar";
+import SingleProduct from "./components/SingleProduct";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/products/kitchen" element={<Kitchen />} />
         <Route path="/products/chairs" element={<Chairs />} />
         <Route path="/products/skincare" element={<SkinCare />} />
+        <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Newsletter />

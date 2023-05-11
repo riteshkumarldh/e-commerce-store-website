@@ -2,15 +2,19 @@
 import { RxCross2 } from "react-icons/rx";
 // using context
 import { useCart } from "../context/cartContext";
+// components
+import EmptyCart from "./EmptyCart";
+import CartDetails from "./CartDetails";
 
 export default function CartSidebar() {
-  const { cartOpen, setCartOpen } = useCart();
+  const { cartOpen, setCartOpen, cart } = useCart();
+
   return (
     <>
       <aside
-        className={`fixed z-20 ${
+        className={`fixed z-[100] ${
           cartOpen ? "right-0" : "right-[-512px]"
-        } transition-all duration-300 top-0 max-w-lg w-full h-screen bg-yellow-50`}
+        } transition-all duration-300 top-0 max-w-lg w-full h-screen bg-white`}
       >
         <div className="p-6 flex justify-between items-center">
           <h2 className="text-lg sm:text-xl font-black">
@@ -22,6 +26,7 @@ export default function CartSidebar() {
             onClick={() => setCartOpen((prev) => !prev)}
           />
         </div>
+        {cart.length < 1 ? <EmptyCart /> : <CartDetails />}
       </aside>
       {/* overlay */}
       <div
