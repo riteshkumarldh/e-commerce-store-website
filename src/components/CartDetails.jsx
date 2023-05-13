@@ -5,8 +5,13 @@ import { useCart } from "../context/cartContext";
 import { RxCross2 } from "react-icons/rx";
 
 export default function CartDetails() {
-  const { cart, increaseQuantity, decreaseQuantity, deleteProductFromCart } =
-    useCart();
+  const {
+    cart,
+    increaseQuantity,
+    decreaseQuantity,
+    deleteProductFromCart,
+    subTotal,
+  } = useCart();
   return (
     <div className="flex flex-col justify-between h-screen overflow-scroll pb-52">
       <div className="flex flex-col gap-2">
@@ -58,7 +63,7 @@ export default function CartDetails() {
       <div className="absolute left-0 bg-white bottom-0 w-full flex items-center gap-2 justify-between px-5 py-5 border-t-[3px] border-black border-dashed">
         <div className="flex gap-2 flex-col">
           <h2 className="text-2xl sm:text-3xl font-bold ">Subtotal</h2>
-          <h2 className="text-2xl sm:text-3xl font-bold ">$45.00</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold ">${subTotal}</h2>
         </div>
         <Link
           className="px-4 py-2 sm:px-6 sm:py-3 sm:text-xl text-lg bg-transparent text-black font-semibold border-2 border-black hover:bg-black hover:text-white transition-all duration-200"

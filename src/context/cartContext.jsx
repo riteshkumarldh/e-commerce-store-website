@@ -15,11 +15,23 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) || []
   );
+  // hold the cart total
+  const [subTotal, setSubTotal] = useState(null);
 
   // saving in localstorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+    getCartTotal();
   }, [cart]);
+
+  const getCartTotal = () => {
+    const total = cart.reduce((acc, cur) => {
+      const productTotal = cur.price * cur.quantity;
+      return acc + productTotal;
+    }, 0);
+
+    setSubTotal(total);
+  };
 
   // add to cart
   const addToCart = (product, qty, id) => {
@@ -41,6 +53,7 @@ const CartProvider = ({ children }) => {
       setToastAction("success");
     }
 
+    // getCartTotal();
     setTimeout(() => {
       setToast(false);
       setToastMessage("");
@@ -60,6 +73,7 @@ const CartProvider = ({ children }) => {
       setToastAction("success");
     }
 
+    // getCartTotal();
     setTimeout(() => {
       setToast(false);
       setToastMessage("");
@@ -80,6 +94,7 @@ const CartProvider = ({ children }) => {
       setToastAction("success");
     }
 
+    // getCartTotal();
     setTimeout(() => {
       setToast(false);
       setToastMessage("");
@@ -98,6 +113,7 @@ const CartProvider = ({ children }) => {
     setToastMessage("Product Removed");
     setToastAction("danger");
 
+    // getCartTotal();
     setTimeout(() => {
       setToast(false);
       setToastMessage("");
@@ -116,6 +132,7 @@ const CartProvider = ({ children }) => {
     toast,
     toastMessage,
     toastAction,
+    subTotal,
   };
 
   return (

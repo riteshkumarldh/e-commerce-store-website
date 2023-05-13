@@ -12,7 +12,7 @@ import Navbar from "./Navbar";
 import { useCart } from "../context/cartContext";
 
 export default function Header() {
-  const { setCartOpen } = useCart();
+  const { setCartOpen, cart } = useCart();
   const [mobileMenu, setMobileMenu] = useState(false);
   return (
     <header className="shadow-md">
@@ -20,11 +20,16 @@ export default function Header() {
         <Logo />
         <div className="flex items-center gap-8 md:gap-10">
           <Navbar mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
-          <RiShoppingCartFill
-            size={28}
-            className="cursor-pointer"
-            onClick={() => setCartOpen((prev) => !prev)}
-          />
+          <div className="relative">
+            <span className="absolute top-[-15px] right-[-10px] h-6 w-6 rounded-md grid place-items-center bg-red-200 text-red-700 font-medium">
+              {cart.length}
+            </span>
+            <RiShoppingCartFill
+              size={28}
+              className="cursor-pointer"
+              onClick={() => setCartOpen((prev) => !prev)}
+            />
+          </div>
           <RiMenu3Fill
             size={28}
             className="cursor-pointer md:hidden"
