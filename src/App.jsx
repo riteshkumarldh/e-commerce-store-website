@@ -17,10 +17,12 @@ import Footer from "./components/Footer";
 import Newsletter from "./components/Newsletter";
 import CartSidebar from "./components/CartSidebar";
 import SingleProduct from "./components/SingleProduct";
+import ToastMessage from "./components/ToastMessage";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ToastMessage />
       <Header />
       <CartSidebar />
       <Routes>

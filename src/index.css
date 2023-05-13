@@ -23,3 +23,19 @@
     grid-row: span 2;
   }
 }
+
+.toast {
+  animation: slide 1.2s linear forwards;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 40px;
+  }
+  100% {
+    top: 0;
+  }
+}
