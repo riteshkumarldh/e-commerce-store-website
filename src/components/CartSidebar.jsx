@@ -1,10 +1,9 @@
 // icon
 import { RxCross2 } from "react-icons/rx";
-// using context
-import { useCart } from "../context/cartContext";
 // components
 import EmptyCart from "./EmptyCart";
 import CartDetails from "./CartDetails";
+import { useCart } from "../context/cartContext";
 
 export default function CartSidebar() {
   const { cartOpen, setCartOpen, cart } = useCart();
@@ -18,7 +17,7 @@ export default function CartSidebar() {
       >
         <div className="p-6 flex justify-between items-center">
           <h2 className="text-lg sm:text-xl font-black">
-            Your shopping cart (0)
+            Your shopping cart ({cart.length})
           </h2>
           <RxCross2
             size={25}

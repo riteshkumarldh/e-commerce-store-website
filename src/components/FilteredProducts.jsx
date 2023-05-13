@@ -22,7 +22,7 @@ export default function FilteredProducts({ category }) {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
       {data.map((product) => (
         <Link
-          to={`product/${product.id}`}
+          to={`/product/${product.id}`}
           key={product.id}
           className="border-[4px] border-gray-300 flex flex-col items-center justify-center hover:border-gray-800 transition-all duration-300"
         >

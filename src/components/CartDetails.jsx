@@ -5,11 +5,12 @@ import { useCart } from "../context/cartContext";
 import { RxCross2 } from "react-icons/rx";
 
 export default function CartDetails() {
-  const { cart } = useCart();
+  const { cart, increaseQuantity, decreaseQuantity, deleteProductFromCart } =
+    useCart();
   return (
     <div className="flex flex-col justify-between h-screen overflow-scroll pb-52">
       <div className="flex flex-col gap-2">
-        {cart.slice(0, 5).map((item) => (
+        {cart?.map((item) => (
           <div key={item.id} className="flex border border-gray-500 mx-5">
             <figure className="h-36 w-36 grid place-items-center p-2">
               <img
@@ -21,21 +22,30 @@ export default function CartDetails() {
             <div className="bg-neutral-200 w-full py-5 flex flex-col justify-between">
               <div className="flex justify-between items-center px-2">
                 <h2 className="text-xl font-medium">{item.description}</h2>
-                <h2 className="text-xl font-medium">${item.price}</h2>
+                <h2 className="text-xl font-medium">
+                  ${(+item.quantity * +item.price).toFixed(2)}
+                </h2>
               </div>
               <div className="flex justify-between items-center px-2 flex-wrap">
                 <div className="flex ">
-                  <button className="bg-black text-white font-bold px-4 py-2 text-xl">
+                  <button
+                    className="bg-black text-white font-bold px-4 py-2 text-xl"
+                    onClick={() => decreaseQuantity(item.id)}
+                  >
                     -
                   </button>
                   <h2 className="w-10 grid place-items-center bg-white font-semibold border-black border-2">
-                    {cart.length}
+                    {item.quantity}
                   </h2>
-                  <button className="bg-black text-white font-bold px-4 py-2 text-xl">
+                  <button
+                    className="bg-black text-white font-bold px-4 py-2 text-xl"
+                    onClick={() => increaseQuantity(item.id)}
+                  >
                     +
                   </button>
                 </div>
                 <RxCross2
+                  onClick={() => deleteProductFromCart(item.id)}
                   size={20}
                   className="cursor-pointer hover:bg-slate-200 transition-all "
                 />
