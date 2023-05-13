@@ -8,6 +8,7 @@ import { products } from "../assets/data/ProductsData";
 import ProductImgGallery from "./ProductImgGallery";
 import ProductDetails from "./ProductDetails";
 import ExtraProductDetails from "./ExtraProductDetails";
+import ProductSlider from "./ProductSlider";
 
 export default function SingleProduct() {
   const param = useParams();
@@ -33,6 +34,7 @@ export default function SingleProduct() {
             <ProductDetails singleProduct={singleProduct} />
           </div>
           <ExtraProductDetails singleProduct={singleProduct} />
+          <ProductSlider />
         </>
       ) : (
         <h1>loading...</h1>
