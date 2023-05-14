@@ -24,6 +24,7 @@ export default function Navbar({ mobileMenu, setMobileMenu }) {
               <Link
                 to={menu.path}
                 className="hover:underline transition-all font-semibold uppercase md:font-normal"
+                onClick={() => setMobileMenu((prev) => !prev)}
               >
                 {menu.name}
               </Link>
