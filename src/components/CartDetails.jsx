@@ -11,6 +11,7 @@ export default function CartDetails() {
     decreaseQuantity,
     deleteProductFromCart,
     subTotal,
+    setCartOpen,
   } = useCart();
   return (
     <div className="flex flex-col justify-between h-screen overflow-scroll pb-52">
@@ -68,6 +69,7 @@ export default function CartDetails() {
         <Link
           className="px-4 py-2 sm:px-6 sm:py-3 sm:text-xl text-lg bg-transparent text-black font-semibold border-2 border-black hover:bg-black hover:text-white transition-all duration-200"
           to="/checkout"
+          onClick={() => setCartOpen(false)}
         >
           Go to Checkout
         </Link>
