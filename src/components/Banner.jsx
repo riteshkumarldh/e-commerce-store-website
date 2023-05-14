@@ -8,7 +8,7 @@ export default function Banner({ dir, title, desc, banner }) {
           <h2 className="text-3xl font-bold">{title}</h2>
           <p className="text-base">{desc}</p>
           <Link
-            to="/products"
+            to="/products/all"
             className="uppercase px-4 py-2 bg-black text-white font-bold rounded-sm w-max hover:bg-transparent border-2 hover:text-black transition-all border-black "
           >
             Shop now
