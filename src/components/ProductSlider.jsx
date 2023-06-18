@@ -7,7 +7,7 @@ export default function ProductSlider() {
       <h2 className="text-xl sm:text-2xl font-semibold mb-4">
         Trending Products
       </h2>
-      <div className="flex gap-5 custom-overflow-scroll">
+      <div className="flex gap-5 pb-5 custom-overflow-scroll">
         {products.map((product) => {
           return (
             <Link
